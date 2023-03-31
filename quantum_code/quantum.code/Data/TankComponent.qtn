@@ -1,0 +1,29 @@
+﻿asset StatusData;
+asset ShootingData;
+asset MoveData;
+
+component Status {
+    FP CurrentHealth;
+    Boolean IsDead;
+    FP RespawnTimer;
+    
+    asset_ref<StatusData> StatusData;
+}
+
+component Movement{
+    asset_ref<MoveData> MoveData;
+}
+
+component Score{
+    Int32 Kills;
+    Int32 Deaths;
+}
+
+component Shooting{
+    [HideInInspector]
+    FP FireRateTimer;
+
+    
+    asset_ref<ShootingData> ShootingData;
+}
+

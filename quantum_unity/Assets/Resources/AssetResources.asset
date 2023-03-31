@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd8e95ae0daaec4496511105240e8a3, type: 3}
   m_Name: AssetResources
   m_EditorClassIdentifier: 
-  AddressablesGroup:
-    _resources: []
   AssetBundlesGroup:
     _resources: []
   ResourcesGroup:
@@ -43,13 +41,53 @@ MonoBehaviour:
         Id:
           Value: 5
       ResourcePath: DB/Configs/SimulationConfig
+    - Path: Resources/DB/Data/MoveData
+      AssetRef:
+        Id:
+          Value: 276484684037051603
+      ResourcePath: DB/Data/MoveData
+    - Path: Resources/DB/Tanks/Tank|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 614003902182229293
+      ResourcePath: DB/Tanks/Tank
+    - Path: Resources/DB/Data/ShootingData
+      AssetRef:
+        Id:
+          Value: 1475235076028789207
+      ResourcePath: DB/Data/ShootingData
+    - Path: Resources/DB/Data/StatusData
+      AssetRef:
+        Id:
+          Value: 1495096369990905745
+      ResourcePath: DB/Data/StatusData
     - Path: Resources/DB/Map1
       AssetRef:
         Id:
           Value: 1710471675203725834
       ResourcePath: DB/Map1
+    - Path: Resources/DB/Data/BulletData
+      AssetRef:
+        Id:
+          Value: 2181609840158590069
+      ResourcePath: DB/Data/BulletData
     - Path: Resources/DB/Map1_mesh
       AssetRef:
         Id:
           Value: 2437605330551657343
       ResourcePath: DB/Map1_mesh
+    - Path: Resources/DB/Tanks/Bullet|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 2671695718013220467
+      ResourcePath: DB/Tanks/Bullet
+    - Path: Resources/DB/Tanks/Bullet|EntityView
+      AssetRef:
+        Id:
+          Value: 3205470437525162208
+      ResourcePath: DB/Tanks/Bullet
+    - Path: Resources/DB/Tanks/Tank|EntityView
+      AssetRef:
+        Id:
+          Value: 3863861978114042464
+      ResourcePath: DB/Tanks/Tank

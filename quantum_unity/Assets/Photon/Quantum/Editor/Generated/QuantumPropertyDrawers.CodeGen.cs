@@ -8,6 +8,34 @@ namespace Quantum.Editor {
   using UnityEngine;
   using UnityEditor;
 
+  [CustomPropertyDrawer(typeof(AssetRefBulletData))]
+  public class AssetRefBulletDataPropertyDrawer : PropertyDrawer {
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
+      AssetRefDrawer.DrawAssetRefSelector(position, property, label, typeof(BulletDataAsset));
+    }
+  }
+
+  [CustomPropertyDrawer(typeof(AssetRefMoveData))]
+  public class AssetRefMoveDataPropertyDrawer : PropertyDrawer {
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
+      AssetRefDrawer.DrawAssetRefSelector(position, property, label, typeof(MoveDataAsset));
+    }
+  }
+
+  [CustomPropertyDrawer(typeof(AssetRefShootingData))]
+  public class AssetRefShootingDataPropertyDrawer : PropertyDrawer {
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
+      AssetRefDrawer.DrawAssetRefSelector(position, property, label, typeof(ShootingDataAsset));
+    }
+  }
+
+  [CustomPropertyDrawer(typeof(AssetRefStatusData))]
+  public class AssetRefStatusDataPropertyDrawer : PropertyDrawer {
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
+      AssetRefDrawer.DrawAssetRefSelector(position, property, label, typeof(StatusDataAsset));
+    }
+  }
+
   [CustomPropertyDrawer(typeof(Quantum.Prototypes.InputButtons_Prototype))]
   partial class PrototypeDrawer {}
 }

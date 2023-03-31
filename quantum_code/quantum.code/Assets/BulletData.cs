@@ -1,0 +1,26 @@
+﻿using Photon.Deterministic;
+
+namespace Quantum
+{
+    public partial class BulletData
+    {
+        public AssetRefEntityPrototype BulletPrototype;
+        public FP Speed;
+        public FP Damage;
+        public FP Range;
+
+        public unsafe void BulletAction(Frame frame, EntityRef bullet, EntityRef targerTank)
+        {
+            // Do some thing
+            if(targerTank != EntityRef.None)
+            {
+                // Call signals damage on this tank
+            }
+
+            //BulletFields fields = frame.Get<BulletFields>(bullet);
+            //FPVector3 position = frame.Get<Transform3D>(bullet).Position;
+
+            frame.Destroy(bullet);
+        }
+    }
+}

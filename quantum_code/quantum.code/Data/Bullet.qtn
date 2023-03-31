@@ -1,0 +1,19 @@
+﻿asset BulletData;
+
+component BulletFields{
+    [HideInInspector]
+    FP Time;
+
+    [HideInInspector]
+    entity_ref Source;
+
+    [HideInInspector]
+    FPVector3 Direction;
+
+    [HideInInspector]
+    FPVector3 SourcePosition;
+
+    asset_ref<BulletData> BulletData;
+}
+
+event OnBulletDestroyed{}

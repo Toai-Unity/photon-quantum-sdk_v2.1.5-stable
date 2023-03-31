@@ -6,6 +6,30 @@
 using System;
 namespace Quantum.Prototypes.Unity {
   [System.SerializableAttribute()]
+  [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.BulletFields))]
+  public class BulletFields_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.BulletFields_Prototype> {
+    [Quantum.Inspector.HideInInspectorAttribute()]
+    public Photon.Deterministic.FP Time;
+    [Quantum.Inspector.HideInInspectorAttribute()]
+    [Quantum.LocalReference]
+    public global::EntityPrototype Source;
+    [Quantum.Inspector.HideInInspectorAttribute()]
+    public Photon.Deterministic.FPVector3 Direction;
+    [Quantum.Inspector.HideInInspectorAttribute()]
+    public Photon.Deterministic.FPVector3 SourcePosition;
+    public Quantum.AssetRefBulletData BulletData;
+
+    public sealed override Quantum.Prototypes.BulletFields_Prototype Convert(EntityPrototypeConverter converter) {
+      var result = new Quantum.Prototypes.BulletFields_Prototype();
+      result.Time = this.Time;
+      converter.Convert(this.Source, out result.Source);
+      result.Direction = this.Direction;
+      result.SourcePosition = this.SourcePosition;
+      result.BulletData = this.BulletData;
+      return result;
+    }
+  }
+  [System.SerializableAttribute()]
   [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.PhysicsJoints3D))]
   public class PhysicsJoints3D_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.PhysicsJoints3D_Prototype> {
     [Quantum.Inspector.DynamicCollectionAttribute()]

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c449f2e767053a4e8512ec2c2d179ad, type: 3}
+  m_Name: BulletData
+  m_EditorClassIdentifier: 
+  Settings:
+    Identifier:
+      Path: Resources/DB/Data/BulletData
+      Guid:
+        Value: 2181609840158590069
+    BulletPrototype:
+      Id:
+        Value: 2671695718013220467
+    Speed:
+      RawValue: 327680
+    Damage:
+      RawValue: 1310720
+    Range:
+      RawValue: 1638400
