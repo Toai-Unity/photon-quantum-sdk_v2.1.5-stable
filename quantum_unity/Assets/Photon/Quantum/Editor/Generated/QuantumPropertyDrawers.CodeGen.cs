@@ -15,6 +15,13 @@ namespace Quantum.Editor {
     }
   }
 
+  [CustomPropertyDrawer(typeof(AssetRefGameControllerData))]
+  public class AssetRefGameControllerDataPropertyDrawer : PropertyDrawer {
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
+      AssetRefDrawer.DrawAssetRefSelector(position, property, label, typeof(GameControllerDataAsset));
+    }
+  }
+
   [CustomPropertyDrawer(typeof(AssetRefMoveData))]
   public class AssetRefMoveDataPropertyDrawer : PropertyDrawer {
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
@@ -36,6 +43,7 @@ namespace Quantum.Editor {
     }
   }
 
+  [CustomPropertyDrawer(typeof(Quantum.Prototypes.GameState_Prototype))]
   [CustomPropertyDrawer(typeof(Quantum.Prototypes.InputButtons_Prototype))]
   partial class PrototypeDrawer {}
 }

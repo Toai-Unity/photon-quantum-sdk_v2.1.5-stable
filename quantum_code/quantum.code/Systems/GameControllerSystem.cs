@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Quantum.Systems
 {
-    public unsafe class ScoreSystem
+    public unsafe class GameControllerSystem
     {
-
     }
 }

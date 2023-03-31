@@ -90,7 +90,9 @@
     <Compile Include="SystemSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Systems\BulletSystem.cs" />
+    <Compile Include="Systems\GameControllerSystem.cs" />
     <Compile Include="Systems\MovementSystem.cs" />
+    <Compile Include="Systems\ScoreSystem.cs" />
     <Compile Include="Systems\ShootingSystem.cs" />
     <Compile Include="Systems\TankSystem.cs" />
   </ItemGroup>
@@ -99,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Bullet.qtn" />
+    <None Include="Data\GameController.qtn" />
     <None Include="Data\Input.qtn" />
     <None Include="Data\Spawn.qtn" />
     <None Include="Data\Tank.qtn" />
