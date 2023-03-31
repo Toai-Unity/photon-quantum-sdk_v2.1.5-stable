@@ -22,7 +22,6 @@ component Score{
 component Shooting{
     [HideInInspector]
     FP FireRateTimer;
-
     
     asset_ref<ShootingData> ShootingData;
 }

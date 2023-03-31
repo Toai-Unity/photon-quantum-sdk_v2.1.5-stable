@@ -102,7 +102,7 @@
     <None Include="Data\Input.qtn" />
     <None Include="Data\Spawn.qtn" />
     <None Include="Data\Tank.qtn" />
-    <None Include="Data\TankComponent.qtn" />
+    <None Include="Data\TankComponents.qtn" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
