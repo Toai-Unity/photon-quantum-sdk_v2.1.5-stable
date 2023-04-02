@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Quantum.Systems
 {
-    public unsafe class GameControllerSystem
+    public unsafe class GameControllerSystem : SystemMainThread
     {
+        public override void Update(Frame f)
+        {
+        }
     }
 }

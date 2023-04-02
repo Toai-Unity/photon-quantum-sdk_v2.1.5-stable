@@ -136,12 +136,12 @@ MonoBehaviour:
     PositionOffset:
       RawValue: 0
   PhysicsCollider:
-    IsTrigger: 0
+    IsTrigger: 1
     Material:
       Id:
         Value: 0
     SourceCollider: {fileID: 0}
-    IsEnabled: 1
+    IsEnabled: 0
     Shape2D:
       ShapeType: 0
       PolygonCollider:

@@ -23,10 +23,14 @@ namespace Quantum
                 new Core.PlayerConnectedSystem(),
 
                 // user systems go here 
+                new GameControllerSystem(),
                 new TankSystem(),
                 new MovementSystem(),
                 new ShootingSystem(),
                 new BulletSystem(),
+                new StatusSystem(),
+                new ScoreSystem(),
+                new RespawnSystem(),
             };
         }
     }

@@ -210,6 +210,129 @@ MonoBehaviour:
         X:
           RawValue: 0
         Y:
+          RawValue: 42198
+        Z:
+          RawValue: 0
+        W:
+          RawValue: -50141
+      Position:
+        X:
+          RawValue: 512742
+        Y:
+          RawValue: 91122
+        Z:
+          RawValue: 486872
+      PhysicsMaterial:
+        Id:
+          Value: 0
+      ShapeType: 2
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 102562
+        Y:
+          RawValue: 96259
+        Z:
+          RawValue: 150833
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: Building01
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 4
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 49774
+        Z:
+          RawValue: 0
+        W:
+          RawValue: 42632
+      Position:
+        X:
+          RawValue: 58422
+        Y:
+          RawValue: 87814
+        Z:
+          RawValue: 706623
+      PhysicsMaterial:
+        Id:
+          Value: 0
+      ShapeType: 2
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 233718
+        Y:
+          RawValue: 92951
+        Z:
+          RawValue: 135852
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: Building02
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 5
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 42753
+        Z:
+          RawValue: 0
+        W:
+          RawValue: -49670
+      Position:
+        X:
+          RawValue: -341567
+        Y:
+          RawValue: 87814
+        Z:
+          RawValue: 760692
+      PhysicsMaterial:
+        Id:
+          Value: 0
+      ShapeType: 2
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 234670
+        Y:
+          RawValue: 92951
+        Z:
+          RawValue: 135671
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: Building02 (1)
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 6
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: 0
+        Y:
           RawValue: 0
         Z:
           RawValue: 0
@@ -244,7 +367,7 @@ MonoBehaviour:
           Id:
             Value: 0
         IsTrigger: 0
-        ColliderIndex: 4
+        ColliderIndex: 7
         MutableMode: 0
       MutableMode: 0
     MapEntities: []
@@ -269,16 +392,23 @@ MonoBehaviour:
     PhysicsCollider3D: []
     PhysicsCallbacks2D: []
     PhysicsCallbacks3D: []
-    Transform2D:
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D:
     - Position:
         X:
           RawValue: 0
         Y:
+          RawValue: 98304
+        Z:
           RawValue: 0
       Rotation:
-        RawValue: 0
-    Transform2DVertical: []
-    Transform3D: []
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
     View: []
     PhysicsJoints2D: []
     PhysicsJoints3D: []
@@ -302,16 +432,23 @@ MonoBehaviour:
     PhysicsCollider3D: []
     PhysicsCallbacks2D: []
     PhysicsCallbacks3D: []
-    Transform2D:
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D:
     - Position:
         X:
           RawValue: 1697382
         Y:
+          RawValue: 98304
+        Z:
           RawValue: 0
       Rotation:
-        RawValue: 0
-    Transform2DVertical: []
-    Transform3D: []
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
     View: []
     PhysicsJoints2D: []
     PhysicsJoints3D: []
@@ -335,16 +472,23 @@ MonoBehaviour:
     PhysicsCollider3D: []
     PhysicsCallbacks2D: []
     PhysicsCallbacks3D: []
-    Transform2D:
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D:
     - Position:
         X:
           RawValue: 0
         Y:
+          RawValue: 98304
+        Z:
           RawValue: -1690828
       Rotation:
-        RawValue: 0
-    Transform2DVertical: []
-    Transform3D: []
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
     View: []
     PhysicsJoints2D: []
     PhysicsJoints3D: []
@@ -368,16 +512,23 @@ MonoBehaviour:
     PhysicsCollider3D: []
     PhysicsCallbacks2D: []
     PhysicsCallbacks3D: []
-    Transform2D:
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D:
     - Position:
         X:
           RawValue: -825753
         Y:
+          RawValue: 98304
+        Z:
           RawValue: 0
       Rotation:
-        RawValue: 0
-    Transform2DVertical: []
-    Transform3D: []
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
     View: []
     PhysicsJoints2D: []
     PhysicsJoints3D: []
@@ -401,16 +552,23 @@ MonoBehaviour:
     PhysicsCollider3D: []
     PhysicsCallbacks2D: []
     PhysicsCallbacks3D: []
-    Transform2D:
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D:
     - Position:
         X:
           RawValue: 1298923
         Y:
+          RawValue: 98304
+        Z:
           RawValue: 1212416
       Rotation:
-        RawValue: 0
-    Transform2DVertical: []
-    Transform3D: []
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
     View: []
     PhysicsJoints2D: []
     PhysicsJoints3D: []

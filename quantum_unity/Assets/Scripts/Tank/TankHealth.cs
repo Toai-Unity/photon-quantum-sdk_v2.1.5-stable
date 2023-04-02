@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class TankHealth : MonoBehaviour
+public class TankHealth : QuantumCallbacks
 {
     public float m_StartingHealth = 100f;          
     public Slider m_Slider;                        
@@ -34,6 +34,8 @@ public class TankHealth : MonoBehaviour
         SetHealthUI();
     }
     */
+
+
 
     public void TakeDamage(float amount)
     {

@@ -4,7 +4,7 @@ namespace Quantum
 {
     public static unsafe class RespawnHelper
     {
-        public static void RespawnTank(Frame frame, EntityRef robot)
+        public static void Respawn(Frame frame, EntityRef tank)
         {
             FPVector3 position = FPVector3.One * 4;
             int spawnCount = frame.ComponentCount<SpawnIdentifier>();
@@ -24,9 +24,12 @@ namespace Quantum
                 }
             }
 
-            Transform3D* robotTransform = frame.Unsafe.GetPointer<Transform3D>(robot);
+            Transform3D* robotTransform = frame.Unsafe.GetPointer<Transform3D>(tank);
 
             robotTransform->Position = position;
+
+            frame.Signals.OnTankRespawn(tank);
+            frame.Events.OnTankRespawn(tank);
         }
     }
 }

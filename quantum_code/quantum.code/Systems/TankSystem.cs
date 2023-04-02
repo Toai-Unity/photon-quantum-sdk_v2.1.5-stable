@@ -6,7 +6,7 @@ namespace Quantum
 {
     public unsafe class TankSystem : SystemSignalsOnly, ISignalOnPlayerDataSet
     {
-        public void OnPlayerDataSet(Frame frame, PlayerRef player)
+        void ISignalOnPlayerDataSet.OnPlayerDataSet(Frame frame, PlayerRef player)
         {
             RuntimePlayer data = frame.GetPlayerData(player);
             EntityPrototype prototypeAsset = frame.FindAsset<EntityPrototype>(data.TankPrototype.Id.Value);
@@ -18,11 +18,11 @@ namespace Quantum
             frame.Unsafe.TryGetPointer<Transform3D>(tank, out var tankTransform);
             tankTransform->Position = FPVector3.Zero + FPVector3.One;
 
-            // Set position for tank
-            //RespawnHelper.RespawnTank(frame, tank);
+             //Set position for tank
+            RespawnHelper.Respawn(frame, tank);
 
             // call events
-
+            frame.Events.OnTankRespawn(tank);
         }
     }
 }

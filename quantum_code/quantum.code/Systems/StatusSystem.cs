@@ -1,33 +1,52 @@
-﻿
+﻿using Photon.Deterministic;
 
-using Photon.Deterministic;
-
-namespace Quantum
+namespace Quantum.Systems
 {
-    public unsafe class StatusSystem : SystemMainThread
+    public unsafe class StatusSystem : SystemMainThread, ISignalOnTankTakeDamage, ISignalOnTankRespawn
     {
-        public override void Update(Frame f)
+        void ISignalOnTankTakeDamage.OnTankTakeDamage(Frame frame, EntityRef bullet, EntityRef tankGetDamage, FP damage)
+        {
+            EntityRef shooter = frame.Get<BulletFields>(bullet).Source;
+            TakeDamage(frame, shooter, tankGetDamage, damage);
+        }
+
+        public override void Update(Frame frame)
         {
         }
 
-        private static void TakeDamage(Frame frame, EntityRef sourceEnemyDamage, EntityRef tank, FP damage)
+        private void TakeDamage(Frame frame, EntityRef enemy, EntityRef tank, FP damage)
         {
-            Status* tankStatusComp = frame.Unsafe.GetPointer<Status>(tank);
-            StatusData statusData = frame.FindAsset<StatusData>(tankStatusComp->StatusData.Id);
+            Status* tankStatus = frame.Unsafe.GetPointer<Status>(tank);
+            StatusData statusData = frame.FindAsset<StatusData>(tankStatus->StatusData.Id);
 
-            // Do something to take damage
+            tankStatus->CurrentHealth -= damage;
 
-            // Check if tank die
-            if (tankStatusComp-> CurrentHealth <= 0)
+            frame.Events.OnTankTakeDamage(tank, damage);
+
+            if (tankStatus->CurrentHealth <= 0)
             {
-                KillRobot(frame, sourceEnemyDamage, tank, statusData.TimeToRespawn);
+                KillTank(frame, enemy, tank, statusData.TimeToRespawn);
             }
-
         }
 
-        private static void KillRobot(Frame frame, EntityRef killer, EntityRef robot, FP respawnTime)
+        private void KillTank(Frame frame, EntityRef killer, EntityRef tank, FP respawnTime)
         {
+            Status* tankStatus = frame.Unsafe.GetPointer<Status>(tank);
+            tankStatus->RespawnTimer = respawnTime;
+            tankStatus->IsDead = true;
 
+            // Call event when tank death on Unity side
+            frame.Signals.OnTankDeath(tank, killer);
+            frame.Events.OnTankDeath(tank, killer);
+        }
+
+        void ISignalOnTankRespawn.OnTankRespawn(Frame frame, EntityRef robot)
+        {
+            Status* status = frame.Unsafe.GetPointer<Status>(robot);
+            StatusData statusData = frame.FindAsset<StatusData>(status->StatusData.Id);
+
+            status->IsDead = false;
+            status->CurrentHealth = statusData.MaxHealth;
         }
     }
 }

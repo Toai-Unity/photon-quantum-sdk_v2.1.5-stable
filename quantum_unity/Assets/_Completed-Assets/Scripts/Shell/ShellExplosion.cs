@@ -49,7 +49,7 @@ namespace Complete
                 float damage = CalculateDamage (targetRigidbody.position);
 
                 // Deal this damage to the tank.
-                targetHealth.TakeDamage (damage);
+                //targetHealth.OnRobotDamage (damage);
             }
 
             // Unparent the particles from the shell.

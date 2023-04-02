@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using Quantum;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Complete
 {
-    public class TankHealth : MonoBehaviour
+    public class TankHealth : QuantumCallbacks
     {
         public float m_StartingHealth = 100f;               // The amount of health each tank starts with.
         public Slider m_Slider;                             // The slider to represent how much health the tank currently has.
@@ -18,6 +19,7 @@ namespace Complete
         private float m_CurrentHealth;                      // How much health the tank currently has.
         private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
 
+        private EntityView entityView;
 
         private void Awake ()
         {
@@ -29,8 +31,14 @@ namespace Complete
 
             // Disable the prefab so it can be activated when it's required.
             m_ExplosionParticles.gameObject.SetActive (false);
+
+            entityView = GetComponent<EntityView> ();
         }
 
+        private void Start()
+        {
+            RegisterCallbacks();
+        }
 
         private void OnEnable()
         {
@@ -42,19 +50,23 @@ namespace Complete
             SetHealthUI();
         }
 
-
-        public void TakeDamage (float amount)
+        private void RegisterCallbacks()
         {
-            // Reduce current health by the amount of damage done.
-            m_CurrentHealth -= amount;
+            QuantumEvent.Subscribe<EventOnTankTakeDamage>(this, OnRobotDamage);
+        }
 
-            // Change the UI elements appropriately.
-            SetHealthUI ();
 
-            // If the current health is at or below zero and it has not yet been registered, call OnDeath.
-            if (m_CurrentHealth <= 0f && !m_Dead)
+
+
+        public void OnRobotDamage (EventOnTankTakeDamage eventData)
+        {
+            if (eventData.Tank.Equals(entityView.EntityRef))
             {
-                OnDeath ();
+                // Reduce current health by the amount of damage done.
+                m_CurrentHealth -= eventData.Damage.AsFloat;
+
+                // Change the UI elements appropriately.
+                SetHealthUI();
             }
         }
 

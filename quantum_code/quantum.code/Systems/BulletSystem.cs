@@ -1,6 +1,5 @@
-﻿
-
-using Photon.Deterministic;
+﻿using Photon.Deterministic;
+using System.Diagnostics;
 
 namespace Quantum
 {
@@ -40,7 +39,36 @@ namespace Quantum
             {
                 return false;
             }
+            Transform3D* bulletTransform = frame.Unsafe.GetPointer<Transform3D>(bullet);
+            BulletData data = frame.FindAsset<BulletData>(bulletFields.BulletData.Id);
 
+            FP distancePerFrame = (bulletFields.Direction * data.Speed * frame.DeltaTime).Magnitude;
+
+            Physics3D.HitCollection3D hits = frame.Physics3D.RaycastAll(bulletTransform->Position, bulletFields.Direction, distancePerFrame);
+
+            for (int i = 0; i < hits.Count; i++)
+            {
+                var entity = hits[i].Entity;
+                if (entity != EntityRef.None && frame.Has<Status>(entity) && entity != bulletFields.Source)
+                {
+                    if (frame.Get<Status>(entity).IsDead)
+                    {
+                        continue;
+                    }
+                    bulletTransform->Position = hits[i].Point;
+                    // Applies polymorphic behavior on the bullet action
+                    data.BulletAction(frame, bullet, entity);
+                    return true;
+                }
+
+                if (entity == EntityRef.None)
+                {
+                    bulletTransform->Position = hits[i].Point;
+                    // Applies polymorphic behavior on the bullet action
+                    data.BulletAction(frame, bullet, EntityRef.None);
+                    return true;
+                }
+            }
 
             return false;
         }

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Quantum</RootNamespace>
     <AssemblyName>quantum.code</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -92,8 +92,10 @@
     <Compile Include="Systems\BulletSystem.cs" />
     <Compile Include="Systems\GameControllerSystem.cs" />
     <Compile Include="Systems\MovementSystem.cs" />
+    <Compile Include="Systems\RespawnSystem.cs" />
     <Compile Include="Systems\ScoreSystem.cs" />
     <Compile Include="Systems\ShootingSystem.cs" />
+    <Compile Include="Systems\StatusSystem.cs" />
     <Compile Include="Systems\TankSystem.cs" />
   </ItemGroup>
   <ItemGroup>

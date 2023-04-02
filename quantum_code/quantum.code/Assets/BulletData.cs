@@ -14,11 +14,10 @@ namespace Quantum
             // Do some thing
             if(targerTank != EntityRef.None)
             {
+                Log.Info("Start Damage");
                 // Call signals damage on this tank
+                frame.Signals.OnTankTakeDamage(bullet, targerTank, Damage);
             }
-
-            //BulletFields fields = frame.Get<BulletFields>(bullet);
-            //FPVector3 position = frame.Get<Transform3D>(bullet).Position;
 
             frame.Destroy(bullet);
         }

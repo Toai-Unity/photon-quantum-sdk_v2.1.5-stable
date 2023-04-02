@@ -2,6 +2,7 @@
     player_ref PlayerRef;
 }
 
+signal OnTankTakeDamage(entity_ref bullet, entity_ref tankGetDamage, FP damage);
 signal OnTankRespawn(entity_ref tank);
 signal OnTankDeath(entity_ref deadTank, entity_ref killer);
 
@@ -11,13 +12,11 @@ abstract event TankEvent{
 
 event OnTankTakeDamage : TankEvent{
     FP Damage;
-    entity_ref Source;
 }
 
 synced event OnTankDeath : TankEvent{
     entity_ref Killer;
 }
 
-event OnTankCreated:TankEvent{}
 event OnTankRespawn : TankEvent{}
 event OnTankShoot : TankEvent{}

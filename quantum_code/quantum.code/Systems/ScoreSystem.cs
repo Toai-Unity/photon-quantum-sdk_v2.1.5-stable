@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Quantum.Systems
 {
-    public unsafe class ScoreSystem
+    public unsafe class ScoreSystem : SystemMainThread
     {
-
+        public override void Update(Frame f)
+        {
+        }
     }
 }
