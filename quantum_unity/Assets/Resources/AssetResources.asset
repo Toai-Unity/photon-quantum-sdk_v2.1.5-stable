@@ -41,6 +41,11 @@ MonoBehaviour:
         Id:
           Value: 5
       ResourcePath: DB/Configs/SimulationConfig
+    - Path: Resources/DB/Data/GameControllerData
+      AssetRef:
+        Id:
+          Value: 245348376130405279
+      ResourcePath: DB/Data/GameControllerData
     - Path: Resources/DB/Data/MoveData
       AssetRef:
         Id:
@@ -89,5 +94,5 @@ MonoBehaviour:
     - Path: Resources/DB/Tanks/Tank|EntityView
       AssetRef:
         Id:
-          Value: 3863861978114042464
+          Value: 3700102843808385398
       ResourcePath: DB/Tanks/Tank

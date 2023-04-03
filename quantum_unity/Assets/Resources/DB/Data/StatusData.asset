@@ -17,3 +17,7 @@ MonoBehaviour:
       Path: Resources/DB/Data/StatusData
       Guid:
         Value: 1495096369990905745
+    MaxHealth:
+      RawValue: 6553600
+    TimeToRespawn:
+      RawValue: 327680

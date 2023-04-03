@@ -1,6 +1,5 @@
 ﻿
 using Photon.Deterministic;
-using System.Diagnostics;
 
 namespace Quantum.Systems
 {
@@ -26,7 +25,7 @@ namespace Quantum.Systems
 
                     if (input->Fire.WasPressed)
                     {
-                        shootingComp->FireRateTimer = FP._1 / shootingData.FireRate;
+                        shootingComp->FireRateTimer = FP._6 * 10 / shootingData.FireRate;
                         SpawnBullet(frame, transformComp, tank, shootingComp);
                     }
                 }
@@ -55,5 +54,6 @@ namespace Quantum.Systems
             bulletFields->Time = FP._0;
             bulletFields->SourcePosition = bulletTransform->Position;
         }
+
     }
 }

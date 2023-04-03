@@ -18,5 +18,7 @@ synced event OnTankDeath : TankEvent{
     entity_ref Killer;
 }
 
-event OnTankRespawn : TankEvent{}
+event OnTankRespawn : TankEvent{
+    FP MaxHealth;
+}
 event OnTankShoot : TankEvent{}

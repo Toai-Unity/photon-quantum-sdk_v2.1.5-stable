@@ -1,5 +1,4 @@
 ﻿using Photon.Deterministic;
-using System.Diagnostics;
 
 namespace Quantum
 {
@@ -19,6 +18,9 @@ namespace Quantum
 
                 BulletData bulletData = frame.FindAsset<BulletData>(bulletFieldComp->BulletData.Id);
 
+                FPVector3 futurePosition = bulletTransformComp->Position + bulletFieldComp->Direction * bulletData.Speed * frame.DeltaTime;
+
+                bulletTransformComp->Position = FPVector3.Slerp(bulletTransformComp->Position, futurePosition, FP.FromFloat_UNSAFE(0.1f));
                 bulletTransformComp->Position += bulletFieldComp->Direction * bulletData.Speed  * frame.DeltaTime;
                 bulletFieldComp->Time += frame.DeltaTime;
 

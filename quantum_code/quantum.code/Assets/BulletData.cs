@@ -14,7 +14,6 @@ namespace Quantum
             // Do some thing
             if(targerTank != EntityRef.None)
             {
-                Log.Info("Start Damage");
                 // Call signals damage on this tank
                 frame.Signals.OnTankTakeDamage(bullet, targerTank, Damage);
             }

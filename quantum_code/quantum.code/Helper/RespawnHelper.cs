@@ -28,8 +28,10 @@ namespace Quantum
 
             robotTransform->Position = position;
 
+            Status* tankStatus = frame.Unsafe.GetPointer<Status>(tank);
+            StatusData tankStatusData = frame.FindAsset<StatusData>(tankStatus->StatusData.Id);
             frame.Signals.OnTankRespawn(tank);
-            frame.Events.OnTankRespawn(tank);
+            frame.Events.OnTankRespawn(tank, tankStatusData.MaxHealth);
         }
     }
 }

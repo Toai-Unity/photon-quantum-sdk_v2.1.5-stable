@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BulletData.cs" />
+    <Compile Include="Assets\GameControllerData.cs" />
     <Compile Include="Assets\MoveData.cs" />
     <Compile Include="Assets\ShootingData.cs" />
     <Compile Include="Assets\StatusData.cs" />

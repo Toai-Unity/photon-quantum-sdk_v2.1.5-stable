@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Quantum.Systems
+﻿
+namespace Quantum
 {
-    public unsafe class ScoreSystem : SystemMainThread
+    public unsafe class ScoreSystem : SystemSignalsOnly, ISignalOnTankDeath
     {
-        public override void Update(Frame f)
+        void ISignalOnTankDeath.OnTankDeath(Frame frame, EntityRef deadTank, EntityRef killer)
         {
+            Score* killerScore = frame.Unsafe.GetPointer<Score>(killer);
+            Score* deadScore = frame.Unsafe.GetPointer<Score>(deadTank);
+
+            if (killer != deadTank)
+            {
+                killerScore->Kills += 1;
+            }
+            deadScore->Deaths += 1;
         }
+
     }
 }

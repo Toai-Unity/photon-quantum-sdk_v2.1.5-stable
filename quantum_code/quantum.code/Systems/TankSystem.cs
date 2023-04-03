@@ -21,8 +21,10 @@ namespace Quantum
              //Set position for tank
             RespawnHelper.Respawn(frame, tank);
 
+            Status* tankStatus = frame.Unsafe.GetPointer<Status>(tank);
+            StatusData tankStatusData = frame.FindAsset<StatusData>(tankStatus->StatusData.Id);
             // call events
-            frame.Events.OnTankRespawn(tank);
+            frame.Events.OnTankRespawn(tank, tankStatusData.MaxHealth);
         }
     }
 }

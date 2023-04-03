@@ -2,6 +2,12 @@
 using System;
 
 namespace Quantum {
-  partial class RuntimeConfig {
-  }
+    partial class RuntimeConfig {
+        public AssetRefGameControllerData GameConfigData;
+
+        partial void SerializeUserData(BitStream stream)
+        {
+            stream.Serialize(ref GameConfigData);
+        }
+    }
 }
