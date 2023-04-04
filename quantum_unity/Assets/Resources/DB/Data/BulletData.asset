@@ -21,8 +21,8 @@ MonoBehaviour:
       Id:
         Value: 2671695718013220467
     Speed:
-      RawValue: 1966080
+      RawValue: 196608
     Damage:
       RawValue: 1310720
     Range:
-      RawValue: 1638400
+      RawValue: 1310720

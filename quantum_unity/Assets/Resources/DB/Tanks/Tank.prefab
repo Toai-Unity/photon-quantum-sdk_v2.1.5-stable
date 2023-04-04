@@ -4933,6 +4933,7 @@ GameObject:
   - component: {fileID: 583369208936005049}
   - component: {fileID: -3234193805946897756}
   - component: {fileID: 173636575937410467}
+  - component: {fileID: -976153099266806118}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -5009,23 +5010,23 @@ MonoBehaviour:
       CompoundShapes: []
       IsSetFromSourceCollider: 0
     Shape3D:
-      ShapeType: 1
+      ShapeType: 2
       SphereRadius:
         RawValue: 98304
       PositionOffset:
         X:
           RawValue: 0
         Y:
-          RawValue: 78643
+          RawValue: 65536
         Z:
           RawValue: 0
       BoxExtents:
         X:
-          RawValue: 0
+          RawValue: 65536
         Y:
-          RawValue: 0
+          RawValue: 52428
         Z:
-          RawValue: 0
+          RawValue: 74383
       RotationOffset:
         X:
           RawValue: 0
@@ -5267,6 +5268,21 @@ MonoBehaviour:
   OnEntityDestroyed:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-976153099266806118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910122569853621376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46476a63cca370b41ad403776c34b65d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prototype:
+    Kills: 0
+    Deaths: 0
 --- !u!1 &2444672466982602621
 GameObject:
   m_ObjectHideFlags: 0
